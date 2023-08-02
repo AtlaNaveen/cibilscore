@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .menu-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+  }
+  
+  .menu-btn input {
+    display: none;
+  }
+  
+  .menu-btn label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #888;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .menu-btn span {
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .menu-btn input:checked + label span {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  .menu-btn input:checked + label span:before,
+  .menu-btn input:checked + label span:after {
+    transform: rotate(90deg);
+  }
+  
+  .menu-btn input:checked + label span:before {
+    top: -8px;
+  }
+  
+  .menu-btn input:checked + label span:after {
+    top: 8px;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+  }
+  
+  .menu-btn input:checked ~ .menu {
+    display: block;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    padding: 5px 0;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .card {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+  }
+
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    margin-bottom: 0;
+  }
+  .card button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .card button:hover {
+    background-color: #45a049;
+  }
+  

@@ -1,0 +1,12 @@
+<div class="hamburger-menu">
+    <input id="menu-toggle" type="checkbox" style="display: none;">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+        <li class="text-center">Menu</li>
+        <li class="item"><a (click)="authService.HomePage()"><i class="fas fa-user"></i> My Profile</a></li>
+        <!-- <li class="item"><a (click)="authService.CibilScore()"><i class="fas fa-money-bill"></i> GET LOAN</a></li> -->
+        <li class="item"><a (click)="authService.SignOut()"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+        <!-- <li class="item"><a (click)="authService.LoanPage()"><i class="fas fa-sign-out-alt"></i> Testing Page</a></li> -->
+    </ul>
+</div>
+

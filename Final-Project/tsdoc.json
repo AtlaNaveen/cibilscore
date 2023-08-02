@@ -1,0 +1,37 @@
+{
+	"tags":
+	{
+		"allowUnknownTags" : true
+	},
+	"plugins":[
+		 "plugins/markdown"
+		,"/replicated/node_modules/tsdoc/template/plugins/TSDoc.js"
+	],
+	"opts":
+	{
+		"template"	:"/replicated/node_modules/tsdoc/template",
+		"recurse"	:"true"
+	},
+	"templates" : {
+		"cleverLinks"     : false,
+		"monospaceLinks"  : false
+	},
+	"source":
+	{
+		"includePattern": "(\\.d)?\\.ts$"
+	},
+	"markdown"  : {
+		"parser"   : "gfm",
+		"hardwrap" : true
+	},
+	"tsdoc":{
+		"source"		:"/replicated/src/",
+		"destination"	:"/replicated/docs",
+		"tutorials"		:"",
+		"systemName"	: "replicated",
+		"footer"		: "",
+		"copyright"		: "replicated Copyright © 2023 Naveen.",
+		"outputSourceFiles" : true,
+		"commentsOnly": true
+	}
+}

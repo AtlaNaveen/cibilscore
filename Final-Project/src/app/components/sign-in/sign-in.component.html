@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="center">
+
+    <h1>Login</h1>
+    <form>
+      
+      <div class="txt_field">
+        <input #userName   type="text" required>
+        <span></span>
+        <label>UserEmail</label>
+      </div>
+      <span class="error" *ngIf="useremail">Enter a valid email
+          
+      </span>
+      <div class="txt_field">
+        <input #password type="password" required>
+        <span></span>
+        <label>Password</label>
+      </div>
+      <span class="error" *ngIf="passworderr">Password cannot be null</span>
+      <div>
+        <div class="formGroup">
+          <button type="button" class="googleBtn" (click)="authService.GoogleAuth()">Login With Google
+            <i class="fab fa-google-plus-g"></i>
+
+          </button>
+        </div>
+
+        <!-- <input type="submit" value="Login" (click)="Login(userName.value, password.value)"> -->
+        <button class="btn1" (click)="ValidationCheck(userName.value, password.value)">Login</button>
+        <div class="signup">
+          Not a member? <a href="#" routerLink="/register-user">Signup</a>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+</body>
+
+</html>

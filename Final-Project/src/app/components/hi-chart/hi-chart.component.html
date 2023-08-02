@@ -1,0 +1,20 @@
+<div echarts [options]="chartOption" class="demo-chart"></div>
+
+<div class="centered-div" *ngIf="flag; else elseBlock">
+  <p>Congrats you are eligible for loan</p>
+
+    <button class="btn1 btn1-primary" (click)="authService.LoanPage()">Get loans</button>
+</div>
+<ng-template #elseBlock>
+    <div class="centered-div">
+        <p>Oops your cibil score is too low</p>
+        <p>
+            How to improve your CIBIL score 
+            <span class="clickable-icon" (click)="showMsg()"> 
+              <i class="fas fa-info-circle"></i> 
+            </span>
+        </p>     
+          
+        <button class="btn1 btn1-primary" (click)="authService.HomePage()">Home</button>
+    </div>
+</ng-template>

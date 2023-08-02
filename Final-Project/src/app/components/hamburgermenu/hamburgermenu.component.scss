@@ -1,0 +1,45 @@
+.hamburger-menu {
+  margin-left: 5px;
+    position: relative;
+    // display: inline-block;
+  }
+  
+  .menu-icon {
+    cursor: pointer;
+    font-size: 28px;
+    margin-left: 15px;
+  }
+  
+  .menu {
+    margin-left: 40px;
+    display: none;
+    position: absolute;
+    // top: 100%;
+
+    // left: 0;
+    padding: 10px;
+    // background-color: #f8f9fa;
+    list-style-type: none;
+    // margin: 0;
+    // height: 91.6vh;
+    height: auto;
+    width: 158px;
+    /* position: absolute; */
+    border-radius: 5px;
+    background: rgb(120, 178, 187);
+  }
+
+  .item{ 
+    // text-align: center;
+    margin-left: 10%;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+  
+  .hamburger-menu input[type="checkbox"]:checked ~ .menu {
+    display: block; 
+  }
+ 
+  

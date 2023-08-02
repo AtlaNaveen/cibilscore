@@ -1,0 +1,133 @@
+<app-hamburgermenu></app-hamburgermenu>
+
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        <form class="form-horizontal" [formGroup]="regForm" (submit)="logForm()">
+            <fieldset class="form-group border p-3">
+                <legend class="text-center">
+                    <h3>Enter your details</h3>
+                </legend>
+                <div class="form-group mb-2">
+                    <label for="firstname" class="mb-1 form-label">
+                        <h6 class="mb-0 text-sm">Firstname</h6>
+      
+
+                    </label>
+                    <input type="text" class="form-control" formControlName="firstname" id="firstname" [(ngModel)]="user_firstName"
+                        [ngClass]="{'is-invalid': frm['firstname'].touched && frm['firstname'].invalid}">
+                    <div class="invalid-feedback">
+                        <p>Firstname is required.</p>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="lastname" class="mb-1 form-label">
+                        <h6 class="mb-0 text-sm">Lastname</h6>
+                    </label>
+                    <input type="text" class="form-control" formControlName="lastname" id="lastname" [(ngModel)]="user_lastName"
+                        [ngClass]="{'is-invalid': frm['lastname'].touched && frm['lastname'].invalid}">
+                    <div class="invalid-feedback">
+                        <p *ngIf="regForm.get('lastname')?.hasError('required')">Lastname is required.</p>
+                        <p *ngIf="regForm.get('lastname')?.hasError('minlength')">Lastname should be more than 1
+                            Character.</p>
+                        <p *ngIf="regForm.get('lastname')?.hasError('maxlength')">Lastname should be less than 6
+                            charatcters.</p>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="gender" class="mb-1">
+                        <h6 class="mb-0 text-sm">Gender</h6>
+                    </label>
+                    <div [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="gender" id="gender"  [(ngModel)]="user_gender"
+                                value="female"
+                                [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                            <label class="form-check-label" for="gender">
+                                Female
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="gender" id="gender"
+                                value="male" [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                            <label class="form-check-label" for="gender">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="gender" id="gender"
+                                value="others"
+                                [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                            <label class="form-check-label" for="gender">
+                                Others
+                            </label>
+                        </div>
+                    </div>
+                    <div class="invalid-feedback">
+                        <p>Gender is required.</p>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="age" class="mb-1 form-label">
+                        <h6 class="mb-0 text-sm">Age</h6>
+                    </label>
+                    <input type="number" class="form-control" formControlName="age" id="age"  [(ngModel)]="user_age"
+                        [ngClass]="{'is-invalid': frm['age'].touched && frm['age'].invalid}">
+                    <div class="invalid-feedback">
+                        <p *ngIf="regForm.get('age')?.hasError('required')">Age is required.</p>
+                        <p *ngIf="regForm.get('age')?.hasError('ageRange')">Age should be between {{minAge}} and
+                            {{maxAge}}.</p>
+                    </div>
+                </div>
+                <div formGroupName="address">
+                    <div class="form-group mb-2">
+                        <label for="country" class="mb-1 form-label">
+                            <h6 class="mb-0 text-sm">Country</h6>
+                        </label>
+                        <select class="form-select" formControlName="country" id="country"  [(ngModel)]="user_country"
+                            [ngClass]="{'is-invalid': address['country'].touched && address['country'].invalid}">
+                            <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            <p>Country Name is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="city" class="mb-1 form-label">
+                            <h6 class="mb-0 text-sm">City</h6>
+                        </label>
+                        <input type="text" class="form-control" formControlName="city" id="city"  [(ngModel)]="user_city"
+                            [ngClass]="{'is-invalid': address['city'].touched && address['city'].invalid}">
+                        <div class="invalid-feedback">
+                            <p>City is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="zip" class="mb-1 form-label">
+                            <h6 class="mb-0 text-sm">Zip</h6>
+                        </label>
+                        <input type="text" class="form-control" formControlName="zip" id="zip"  [(ngModel)]="user_zip"
+                            [ngClass]="{'is-invalid': address['zip'].touched && address['zip'].invalid}">
+                        <div class="invalid-feedback">
+                            <p>Postal Code is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="fulladdress" class="mb-1 form-label">
+                            <h6 class="mb-0 text-sm">Full Address</h6>
+                        </label>
+                        <textarea class="form-control" formControlName="fulladdress" id="fulladdress"  [(ngModel)]="user_address"
+                            [ngClass]="{'is-invalid': address['fulladdress'].touched && address['fulladdress'].invalid}"></textarea>
+                        <div class="invalid-feedback">
+                            <p>Full address is required.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 mx-auto mt-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-secondary" (click)="reset()">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

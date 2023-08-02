@@ -1,0 +1,36 @@
+<app-hamburgermenu></app-hamburgermenu>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Message Card</title>
+  <link rel="stylesheet" type="text/css" href="cibil-score.component.scss">
+</head>
+
+<body>
+  <div class="card-container">
+    <div class="card">
+      <h2>Get loans based on cibil score</h2>
+    </div>
+
+    <div class="card">
+      <h2>Check your cibil score now and avail offers</h2>
+      <div *ngIf="flag; else elseBlock">
+        <p>Your Cibil score is {{this.score}}</p>
+
+        <button routerLink="/app-user-details">Re-Check Score</button>
+      </div>
+      <ng-template #elseBlock>
+        <div>
+          <p>Cibil score above 750 would be great</p>
+          <button routerLink="/app-user-details">Check Score</button>
+        </div>
+      </ng-template>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

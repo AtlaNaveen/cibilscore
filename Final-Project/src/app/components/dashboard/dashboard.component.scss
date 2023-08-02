@@ -1,0 +1,47 @@
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.menu {
+  display: none;
+  position: absolute; 
+  // top: 100%;
+  left: 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  list-style-type: none;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.hamburger-menu input[type="checkbox"]:checked ~ .menu {
+  display: block;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.media {
+  text-align: center;
+}
+.menu1
+{
+  display: inline-block;
+  float: left;  
+}
+.move-down{
+  margin-top: 20px;
+}

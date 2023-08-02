@@ -1,0 +1,36 @@
+<!-- <app-hamburgermenu></app-hamburgermenu> -->
+<div class="user-info">
+    <h2>Personal Details</h2>
+    <div>
+      <label for="firstName">First Name:</label>
+      <span>{{ user_firstName }}</span>
+    </div>
+    <div>
+      <label for="lastName">Last Name:</label>
+      <span>{{ user_lastName }}</span>
+    </div>
+    <div>
+        <label for="gender">Gender:</label>
+        <span>{{ user_gender }}</span>
+      </div>
+    <div>
+      <label for="age">Age:</label>
+      <span>{{ user_age }}</span>
+    </div>
+    <div>
+      <label for="address">Address:</label>
+      <span>{{ user_address }} {{user_zip}}</span>
+    </div>
+  </div>
+  <div class="button-container">
+    <ng-container *ngIf="flag; else elseBlock">
+      <button class="btn btn-primary move-down" (click)="authService.EditUser()">Add Details</button>
+    </ng-container>
+    <ng-template #elseBlock>
+        <button class="btn btn-primary move-down" (click)="authService.EditUser()">Edit Details</button>
+
+    </ng-template>
+  </div>
+  
+  
+  
